@@ -1,7 +1,8 @@
 import Field from "../../components/Field";
-import {useForm} from "react-hook-form";
+import {SubmitHandler, useForm} from "react-hook-form";
 import {GiCheckMark} from "react-icons/gi";
 import PhotoUploader from "../../components/PhotoUploader";
+import {LoginFormInputs} from "../Login/types.ts";
 
 
 const Profile = () => {
@@ -21,6 +22,10 @@ const Profile = () => {
         }
     };
 
+    const onSubmit: SubmitHandler<LoginFormInputs> = (data) => {
+        console.log(data);
+    };
+
     return (
         <div className='bg-white h-full p-6 rounded-3xl'>
             <h1 className='font-bold text-3xl h-14 border-b-2'>Profile</h1>
@@ -28,7 +33,7 @@ const Profile = () => {
                 <h3 className='font-bold text-2xl'>Profile photo</h3>
                 <PhotoUploader maxFileSizeKB={500} onPhotoUpload={handlePhotoUpload}/>
             </div>
-            <form>
+            <form onSubmit={handleSubmit(onSubmit)}>
                 <div className='flex flex-row gap-4 border-b-2 py-5'>
                     <h3 className='font-bold text-2xl'>Contact</h3>
                     <div className='flex flex-col w-1/2 px-[10%]'>

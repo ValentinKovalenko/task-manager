@@ -1,11 +1,9 @@
 import React, {useState} from 'react';
-import {useDebounce} from "../../hooks/useDebounce.tsx";
+//import {useDebounce} from "../../hooks/useDebounce.tsx";
 
 const DebouncedInput = () => {
     const [text, setText] = useState('');
-    const debouncedText = useDebounce(text, 500);
-
-    console.log(debouncedText)
+   // const debouncedText = useDebounce(text, 500);
 
     return (
         <div className='w-full'>
