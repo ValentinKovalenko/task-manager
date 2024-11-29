@@ -16,7 +16,7 @@ function App() {
                         <Route path="/login" element={<Login />} />
                         <Route element={<PrivateRoute><Layout /></PrivateRoute>}>
                             {routes
-                                .filter(route => route.isProtected) // захищені маршрути
+                                .filter(route => route.isProtected)
                                 .map(({ path, element }) => (
                                     <Route key={path} path={path} element={element} />
                                 ))}
