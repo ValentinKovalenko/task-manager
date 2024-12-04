@@ -53,7 +53,7 @@ const PhotoUploader: React.FC<PhotoUploaderProps> = ({
                     <img
                         src={preview}
                         alt="Preview"
-                        className='w-full h-full rounded-full object-cover border-2 border-gray-300'
+                        className='w-40 h-40 rounded-full object-cover border-2 border-gray-300'
                     />
                 ) : (
                     <div

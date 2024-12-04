@@ -12,3 +12,51 @@ export const routes: Route[] = [
     { path: '/profile', element: React.createElement(Profile), name: 'Profile', isHiddenInNavbar: true, isProtected: true },
     { path: '*', element: React.createElement(NotFound), name: 'NotFound', isProtected: false, isHiddenInNavbar: true },
 ];
+
+export const tasks = [
+    {
+        id: '1',
+        name: 'Social media review',
+        stage: 'In progress',
+        priority: 'Medium',
+        assigneeTo: {
+            id: '1',
+            avatar: ''
+        }
+    },
+    {
+        id: '2',
+        name: 'Media review',
+        stage: 'Not started',
+        priority: 'Low',
+        assigneeTo: {
+            id: '2',
+            avatar: ''
+        }
+    },
+    {
+        id: '3',
+        name: 'Review',
+        stage: 'Completed',
+        priority: 'High',
+        assigneeTo: {
+            id: '3',
+            avatar: ''
+        }
+    }
+]
+
+export const priorityColors: Record<string, string> = {
+    High: 'bg-amber-600',
+    Medium: 'bg-amber-400',
+    Low: 'bg-amber-200',
+};
+
+export const stageColors: Record<string, string> = {
+    'Not started': 'bg-gray-100',
+    'In progress': 'bg-amber-200',
+    'Completed': 'bg-green-200'
+};
+
+export const stages = ['Not started', 'In progress', 'Completed'];
+export const priorities = ['High', 'Medium', 'Low'];
