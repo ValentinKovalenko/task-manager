@@ -14,7 +14,12 @@ export const routes: Route[] = [
         icon: MdOutlineSpaceDashboard,
         isProtected: true
     },
-    {path: '/tasks', element: React.createElement(MyTasks), name: 'MyTasks', icon: MdOutlineTaskAlt, isProtected: true},
+    {
+        path: '/tasks',
+        element: React.createElement(MyTasks),
+        name: 'MyTasks', icon: MdOutlineTaskAlt,
+        isProtected: true
+    },
     {
         path: '/profile',
         element: React.createElement(Profile),
@@ -22,7 +27,13 @@ export const routes: Route[] = [
         isHiddenInNavbar: true,
         isProtected: true
     },
-    {path: '*', element: React.createElement(NotFound), name: 'NotFound', isProtected: false, isHiddenInNavbar: true},
+    {
+        path: '*',
+        element: React.createElement(NotFound),
+        name: 'NotFound',
+        isProtected: false,
+        isHiddenInNavbar: true
+    },
 ];
 
 export const tasks = [
