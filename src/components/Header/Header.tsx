@@ -35,7 +35,7 @@ const Header = () => {
                     className='font-medium h-10 w-40 bg-amber-300 flex items-center justify-center rounded-3xl border border-black flex-row gap-2 hover:text-white hover:border-white'
                 >
                     <GoPlus/>
-                    Create task
+                    New task
                 </button>
                 <button
                     onClick={handleProfileClick}

@@ -3,15 +3,17 @@ import { useForm } from 'react-hook-form';
 import ControlledListbox from '../ControlledListbox/ControlledListbox.tsx';
 import {CreateTaskProps} from "./types.ts";
 import {priorities, stages} from "../../constants";
+import {GiCheckMark} from "react-icons/gi";
+import {GoChecklist} from "react-icons/go";
 
 
 const TaskModal: FC<CreateTaskProps> = ({ task, onSubmit }) => {
     const { control, handleSubmit, setValue, register } = useForm({
         defaultValues: {
-            name: '',
-            stage: 'Add stage',
-            priority: 'Add priority',
-            assigneeTo: { id: '', avatar: '' },
+            name: task?.name || '',
+            stage: task?.stage || 'Add stage',
+            priority: task?.priority || 'Add priority',
+            assigneeTo: task?.assigneeTo || { id: '', avatar: '' },
             ...task,
         },
     });
@@ -26,42 +28,45 @@ const TaskModal: FC<CreateTaskProps> = ({ task, onSubmit }) => {
     }, [task, setValue]);
 
     return (
-        <form onSubmit={handleSubmit(onSubmit)} className="flex flex-col gap-4 p-4">
-            <label className="block">
-                <span className="text-gray-700">Task Name</span>
+        <form onSubmit={handleSubmit(onSubmit)} className="flex flex-col gap-4 pt-2">
+            <label className="flex flex-row gap-4">
+                <div className='flex items-center'>
+                    <GoChecklist size={25}/>
+                </div>
                 <input
                     {...register('name')}
                     type="text"
-                    className="w-full mt-1 p-2 border rounded"
-                    placeholder="Enter task name"
+                    className="w-full mt-1 p-2 rounded-xl focus:outline-none"
+                    placeholder="Name of task"
                 />
             </label>
-            <label className="block">
-                <span className="text-gray-700">Description</span>
-                <textarea
-                    {...register('description')}
-                    className="w-full mt-1 p-2 border rounded"
-                    placeholder="Enter task description"
-                />
-            </label>
-            <ControlledListbox
-                name="stage"
-                control={control}
-                options={stages}
-                label="Stage"
-            />
             <ControlledListbox
                 name="priority"
                 control={control}
                 options={priorities}
                 label="Priority"
             />
-            <button
-                type="submit"
-                className="mt-4 px-4 py-2 bg-green-600 text-white rounded hover:bg-green-700"
-            >
-                {task ? 'Update Task' : 'Create Task'}
-            </button>
+            <ControlledListbox
+                name="stage"
+                control={control}
+                options={stages}
+                label="Stage"
+            />
+            <label className="block mt-2">
+                <span className="font-medium text-lg">Description</span>
+                <textarea
+                    {...register('description')}
+                    className="w-full mt-1 p-2 border h-40 rounded-xl focus:outline-none"
+                />
+            </label>
+            <div className='flex justify-end'>
+                <button
+                    type='submit'
+                    className='text-sm h-8 w-36 bg-amber-400 border border-black hover:border-white flex items-center justify-center rounded-3xl flex-row gap-3 hover:text-white'>
+                    <GiCheckMark/>
+                    Create task
+                </button>
+            </div>
         </form>
     );
 };

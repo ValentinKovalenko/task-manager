@@ -1,5 +1,5 @@
 import {Route} from "./types.ts";
-import { MdOutlineSpaceDashboard, MdOutlineTaskAlt  } from "react-icons/md";
+import {MdOutlineSpaceDashboard, MdOutlineTaskAlt} from "react-icons/md";
 import Dashboard from '../pages/Dashboard';
 import MyTasks from "../pages/MyTasks";
 import NotFound from "../pages/NotFound";
@@ -7,10 +7,22 @@ import React from "react";
 import Profile from "../pages/Profile/Profile.tsx";
 
 export const routes: Route[] = [
-    { path: '/', element: React.createElement(Dashboard), name: 'Dashboard', icon: MdOutlineSpaceDashboard, isProtected: true },
-    { path: '/tasks', element: React.createElement(MyTasks), name: 'MyTasks', icon: MdOutlineTaskAlt, isProtected: true },
-    { path: '/profile', element: React.createElement(Profile), name: 'Profile', isHiddenInNavbar: true, isProtected: true },
-    { path: '*', element: React.createElement(NotFound), name: 'NotFound', isProtected: false, isHiddenInNavbar: true },
+    {
+        path: '/',
+        element: React.createElement(Dashboard),
+        name: 'Dashboard',
+        icon: MdOutlineSpaceDashboard,
+        isProtected: true
+    },
+    {path: '/tasks', element: React.createElement(MyTasks), name: 'MyTasks', icon: MdOutlineTaskAlt, isProtected: true},
+    {
+        path: '/profile',
+        element: React.createElement(Profile),
+        name: 'Profile',
+        isHiddenInNavbar: true,
+        isProtected: true
+    },
+    {path: '*', element: React.createElement(NotFound), name: 'NotFound', isProtected: false, isHiddenInNavbar: true},
 ];
 
 export const tasks = [
@@ -58,5 +70,14 @@ export const stageColors: Record<string, string> = {
     'Completed': 'bg-green-200'
 };
 
-export const stages = ['Not started', 'In progress', 'Completed'];
-export const priorities = ['High', 'Medium', 'Low'];
+export const stages = [
+    {label: 'Not started', value: 'not_started'},
+    {label: 'In progress', value: 'in_progress'},
+    {label: 'Completed', value: 'completed'}
+];
+
+export const priorities = [
+    { label: 'High', value: 'high' },
+    { label: 'Medium', value: 'medium' },
+    { label: 'Low', value: 'low' },
+];
