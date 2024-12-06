@@ -1,1 +1,1 @@
-export {default} from './PhotoUploader.tsx'
+export { default } from './PhotoUploader.tsx';

@@ -1,1 +1,1 @@
-export {default} from './TaskModal.tsx'
+export { default } from './TaskModal.tsx';

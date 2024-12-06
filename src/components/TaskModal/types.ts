@@ -1,6 +1,6 @@
-import {TypesTask} from "../Task/types.ts";
+import { TypesTask } from '../Task/types.ts';
 
 export interface CreateTaskProps {
-    task?: TypesTask;
-    onSubmit: (data: TypesTask) => void;
+  task?: TypesTask;
+  onSubmit: (data: TypesTask) => void;
 }

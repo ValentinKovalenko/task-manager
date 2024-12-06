@@ -1,1 +1,1 @@
-export {default} from './DebouncedInput.tsx'
+export { default } from './DebouncedInput.tsx';

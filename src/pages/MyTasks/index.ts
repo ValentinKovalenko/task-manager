@@ -1,1 +1,1 @@
-export {default} from './MyTasks.tsx';
+export { default } from './MyTasks.tsx';

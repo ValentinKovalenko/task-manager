@@ -1,1 +1,1 @@
-export {default} from './ControlledListbox.tsx'
+export { default } from './ControlledListbox.tsx';

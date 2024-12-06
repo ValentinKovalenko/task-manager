@@ -1,1 +1,1 @@
-export {defoult} from './Profile.tsx'
+export { defoult } from './Profile.tsx';
