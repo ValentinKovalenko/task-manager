@@ -7,15 +7,15 @@ const Navbar = () => {
   const { isAuthenticated, logout } = useAuth();
 
   return (
-    <nav className="bg-white w-1/4 rounded-3xl flex flex-col text-xl">
-      <h3 className="pt-4 w-full text-center h-16 border-b-2">Task manager</h3>
+    <nav className='bg-white w-1/4 rounded-3xl flex flex-col text-xl'>
+      <h3 className='pt-4 w-full text-center h-16 border-b-2'>Task manager</h3>
       <ul>
         {routes
           .filter((route) => !route.isHiddenInNavbar)
           .filter((route) => !route.isProtected || isAuthenticated)
           .map(({ path, name, icon: Icon }) => (
             <li
-              className="flex h-14 w-full justify-center border-b-2 hover:cursor-pointer"
+              className='flex h-14 w-full justify-center border-b-2 hover:cursor-pointer'
               key={path}
             >
               <NavLink
@@ -28,20 +28,20 @@ const Navbar = () => {
                   }`
                 }
               >
-                {Icon && <Icon className="text-xl" />}
-                <span className="pl-2">{name}</span>
+                {Icon && <Icon className='text-xl' />}
+                <span className='pl-2'>{name}</span>
               </NavLink>
             </li>
           ))}
       </ul>
       {isAuthenticated && (
-        <div className="mt-auto mb-4">
+        <div className='mt-auto mb-4'>
           <button
-            className="flex h-14 items-center pl-4 w-full border-t-2"
+            className='flex h-14 items-center pl-4 w-full border-t-2'
             onClick={logout}
           >
             <MdLogout />
-            <span className="pl-2">Log Out</span>
+            <span className='pl-2'>Log Out</span>
           </button>
         </div>
       )}

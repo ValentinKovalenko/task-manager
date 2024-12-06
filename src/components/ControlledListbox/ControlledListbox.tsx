@@ -23,22 +23,22 @@ const ControlledListbox: React.FC<ControlledListboxProps> = ({
       name={name}
       control={control}
       render={({ field }) => (
-        <div className="flex flex-row items-center mt-4">
-          <span className="flex flex-row gap-2 text-gray-700 w-1/4">
+        <div className='flex flex-row items-center mt-4'>
+          <span className='flex flex-row gap-2 text-gray-700 w-1/4'>
             {labelIcons[label] || null} {label}
           </span>
-          <Listbox {...field} as="div" className="relative">
-            <Listbox.Button className="text-start w-full">
+          <Listbox {...field} as='div' className='relative'>
+            <Listbox.Button className='text-start w-full'>
               +{' '}
               {options.find((option) => option.label === field.value)?.label ||
                 `${field.value}`}
             </Listbox.Button>
-            <Listbox.Options className="absolute w-40 bg-gray-100 border rounded-xl z-10">
+            <Listbox.Options className='absolute w-40 bg-gray-100 border rounded-xl z-10'>
               {options.map((option) => (
                 <Listbox.Option
                   key={option.value}
                   value={option.label}
-                  className="p-2 cursor-pointer hover:bg-white"
+                  className='p-2 cursor-pointer hover:bg-white'
                 >
                   {option.label}
                 </Listbox.Option>

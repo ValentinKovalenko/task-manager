@@ -29,42 +29,42 @@ const TaskModal: FC<CreateTaskProps> = ({ task, onSubmit }) => {
   return (
     <form
       onSubmit={handleSubmit(onSubmit)}
-      className="flex flex-col gap-4 pt-2"
+      className='flex flex-col gap-4 pt-2'
     >
-      <label className="flex flex-row gap-4">
-        <div className="flex items-center">
+      <label className='flex flex-row gap-4'>
+        <div className='flex items-center'>
           <GoChecklist size={25} />
         </div>
         <input
           {...register('name')}
-          type="text"
-          className="w-full mt-1 p-2 rounded-xl focus:outline-none"
-          placeholder="Name of task"
+          type='text'
+          className='w-full mt-1 p-2 rounded-xl focus:outline-none'
+          placeholder='Name of task'
         />
       </label>
       <ControlledListbox
-        name="priority"
+        name='priority'
         control={control}
         options={priorities}
-        label="Priority"
+        label='Priority'
       />
       <ControlledListbox
-        name="stage"
+        name='stage'
         control={control}
         options={stages}
-        label="Stage"
+        label='Stage'
       />
-      <label className="block mt-2">
-        <span className="font-medium text-lg">Description</span>
+      <label className='block mt-2'>
+        <span className='font-medium text-lg'>Description</span>
         <textarea
           {...register('description')}
-          className="w-full mt-1 p-2 border h-40 rounded-xl focus:outline-none"
+          className='w-full mt-1 p-2 border h-40 rounded-xl focus:outline-none'
         />
       </label>
-      <div className="flex justify-end">
+      <div className='flex justify-end'>
         <button
-          type="submit"
-          className="text-sm h-8 w-36 bg-amber-400 border border-black hover:border-white flex items-center justify-center rounded-3xl flex-row gap-3 hover:text-white"
+          type='submit'
+          className='text-sm h-8 w-36 bg-amber-400 border border-black hover:border-white flex items-center justify-center rounded-3xl flex-row gap-3 hover:text-white'
         >
           <GiCheckMark />
           Create task
